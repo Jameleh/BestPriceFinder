@@ -3,6 +3,7 @@ public class DemoCompletableFuture {
 
     public static void show() {
 
-        FlightService.getQuate("site1");
+       Quate quate1 = FlightService.getQuate("site1");
+        System.out.println(quate1);
     }
 }
