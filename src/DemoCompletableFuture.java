@@ -7,7 +7,6 @@ public class DemoCompletableFuture {
 
    var service = new  FlightService();
           service.getQuates()
-                  .stream()
                   .map(future -> future.thenAccept(System.out::println))
                   .collect(Collectors.toList());
 

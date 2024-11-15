@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FlightService {
 
@@ -21,12 +22,11 @@ public class FlightService {
     }
 
 
-    public  List<CompletableFuture<Quate>> getQuates(){
+    public Stream<CompletableFuture<Quate>> getQuates(){
 
         var sites =  List.of("site1","site2","site3");
      return sites.stream()
-                .map(site->getQuate(site))
-                .collect(Collectors.toList());
+                .map(site->getQuate(site));
 
     }
 }
