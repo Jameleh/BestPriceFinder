@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class FlightService {
 
@@ -14,5 +18,15 @@ public class FlightService {
             return new Quate(site, price);
         });
          return x;
+    }
+
+
+    public  List<CompletableFuture<Quate>> getQuates(){
+
+        var sites =  List.of("site1","site2","site3");
+     return sites.stream()
+                .map(site->getQuate(site))
+                .collect(Collectors.toList());
+
     }
 }
