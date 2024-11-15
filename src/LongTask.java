@@ -8,9 +8,9 @@ public class LongTask {
         }
     }
 
-    public static void simulate(int i) {
+    public static void simulate(int delay) {
         try {
-            Thread.sleep(i);
+            Thread.sleep(delay);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
